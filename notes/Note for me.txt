@@ -1,0 +1,23 @@
+az acr update -n <ACR Name> --admin-enabled true
+az acr credential show --name <ACR Name>
+
+<ACR Name>
+az acr update -n <ACR Name> --admin-enabled true
+az acr credential show --name <ACR Name>
+<ACR Name>
+
+az aks create \
+  --resource-group kml_rg_main-84ded9d867cf43ed \
+  --name myAKSCluster \
+  --node-count 1 \
+  --node-vm-size Standard_D2s_v3 \
+  --generate-ssh-keys \
+  --attach-acr <ACR Name>
+
+az aks create \                         
+  --resource-group <Resource Group Name> \
+  --name myAKSCluster \
+  --node-count 1 \
+  --node-vm-size Standard_D2s_v3 \
+  --generate-ssh-keys \
+  --attach-acr <ACR Name>
