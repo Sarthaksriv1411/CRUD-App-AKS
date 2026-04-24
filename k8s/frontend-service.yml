@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-service
+  name: frontend-service
 spec:
   type: LoadBalancer
   selector:
-    app: crud-backend
+    app: crud-frontend
   ports:
   - port: 80
-    targetPort: 5050
+    targetPort: 3000

@@ -16,4 +16,9 @@ spec:
       - name: backend
         image: akscrudapp.azurecr.io/crud-backend:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 5050
+        env:
+        - name: MONGO_URI
+          value: "mongodb://mongodb-service:27017/task_manager"
+        - name: PORT
+          value: "5050"
